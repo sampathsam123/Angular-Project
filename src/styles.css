@@ -1,0 +1,96 @@
+#btn {
+    margin: 15px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #efefef;
+    color: black;
+    border-radius: 5px;
+}
+
+.header {
+    background-color: #007af8;
+    display: flex;
+    cursor: pointer;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.header button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.btn1 {
+    font-size: 18px;
+    margin-bottom: -2px;
+}
+
+.header:hover {
+    background-color: rgb(1, 16, 18);
+    transition: background-color 4s;
+}
+
+.font-awesome button {
+    padding: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btn5 {
+    color: #919191;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.tc {
+    margin-inline: auto;
+}
+.di {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+/*
+h2 {
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+nav a{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 12px 6px;
+    background-color: beige;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color: white;
+    background-color:black;
+}
+
+nav a.active{
+    color: white;
+    background-color: blue;
+}
+
+.next-prev a{
+    margin-top: 50px;
+    margin-bottom: 20px;
+} 
+
+*/
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

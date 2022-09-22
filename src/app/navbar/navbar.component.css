@@ -1,0 +1,23 @@
+span{
+    padding-left: 25px;
+    cursor: pointer;
+    color: #919191;
+}
+.customer-image img {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+}
+.customer-image p {
+    font-size: 15px;
+    display: inline-block;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.active {
+    color: black !important;
+}
+.row{
+    padding-left: 10px;
+}

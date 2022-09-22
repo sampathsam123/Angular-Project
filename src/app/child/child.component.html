@@ -1,0 +1,17 @@
+<h1 style="color:blue;">{{title}}</h1> <br>
+<h2>Firstname is <b>{{firstdata}}</b> Lastname is <b>{{lastdata}}</b></h2>
+<!-- <h2>Firstname is <b>{{objdata.first}}</b> Lastname is <b>{{objdata.last}}</b></h2> -->
+
+
+<table class="table table-borderd">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname </th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of listArray">
+        <td>{{item.first}}</td>
+        <td>{{item.last}}</td>
+    </tbody>
+</table>

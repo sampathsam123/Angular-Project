@@ -1,0 +1,74 @@
+.card-view {
+    border: 1px solid black;
+    margin-top: 10px;
+    height: 120px;
+    width: 250px;
+    cursor: pointer;
+}
+.filter{
+    float: right;
+    margin-right:80px;
+    margin-top: -40px;
+}
+.container {
+    padding-top: 20px;
+}
+
+.cv-header {
+    height: 30px;
+    background-color: #007af8;
+}
+.cv-header span {
+    padding: 5px 10px;
+    color: white;
+}
+#list-view {
+    border: 1px solid black;
+    border-left: 0px solid;
+    border-right: 0px solid;
+}
+
+#list-view span {
+    padding: 30px;
+}
+
+.pagination {
+    margin: 40px;
+    position: fixed;
+}
+
+.data {
+    font-size: normal;
+    font-style: normal;
+}
+
+.cv-header i {
+    color: white;
+    float: right;
+    height: 5px;
+    padding: 5px;
+}
+.user-img {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 50px;
+    height: 60px;
+}
+
+.section {
+    vertical-align: top;
+}
+
+.img-div {
+    width: 30%;
+}
+
+.info-div {
+    width: 70%;
+}
+.info-div button{
+    border:none; 
+    color:#007af8; 
+    background:none; 
+    padding: 0px;
+}

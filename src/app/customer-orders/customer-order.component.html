@@ -1,0 +1,17 @@
+<app-orders></app-orders>
+  <div> 
+    Order for {{customers.firstName}} {{customers.lastName}}
+    <table class="table table-striped">
+        <tbody>
+            <tr *ngFor="let arrayorder of customers.orders;">
+                <td>{{arrayorder.productName }}</td>
+                <td>${{arrayorder.itemCost}}</td>
+                <td>${{customers.totalCost}}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+   
+
+  

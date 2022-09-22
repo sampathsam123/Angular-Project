@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="filter">
+                <label>Filter :</label><br>
+                <input type="text" placeholder="Search Here" class="form-control"[(ngModel)]="search1">
+            </div>
+        </div>
+        <div class="col-md-3"
+            *ngFor="let d of customers  | paginate: { itemsPerPage: 8, currentPage: page } | search : search1">
+            <div class="card-view tc">
+                <div class="cv-header">
+                    <span>{{ d.firstName + ' ' + d.lastName }}
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="EditCustomer(d)"></i>
+                    </span>
+                </div>
+                <div>
+                    <div class="di section img-div">
+                        <img *ngIf="d.gender==='male'" class="user-img" src="../assets/images/male.png">
+                        <img *ngIf="d.gender==='female'" class="user-img" src="../assets/images/female.png">
+                    </div>
+
+                    <div class="di section info-div">
+                        <span class="data">{{d.city}}</span> <br>
+                        <span class="data"> {{d.state.name}}</span><br>
+
+                        <button (click)="ViewOrder(d)">
+                            ViewOrders
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

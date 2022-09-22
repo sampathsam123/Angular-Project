@@ -1,0 +1,41 @@
+.filter {
+    float: right;
+    margin-right: 116px;
+    margin-top: -40px;
+}
+
+.table {
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.row thead {
+    border: 1px solid black;
+}
+
+.row th {
+    padding: 20px;
+}
+
+.td {
+    padding-top: 25px;
+}
+
+.td button {
+    border: none;
+    color: #007af8;
+    background: none;
+}
+
+.tablebody .Vieworder {
+    color: #007af8;
+    padding-top: 25px;
+
+}
+
+.tablebody td img {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 50px;
+    height: 60px;
+}

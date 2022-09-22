@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <img src="../assets/images/people.png"> 
+    <a class="nav-link " aria-current="page"(click)="CustomerManager()">Customer Manager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="btn btn-primary"(click)="Customers()">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" (click)="Order()">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page"(click)="About()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page"(click)="Logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- <div class="header">
+          <div class="b">
+            <img src="../assets/images/people.png">
+            <button class="btn1" (click)="CustomerManager()">Customer Manager</button>
+            <button id="btn" (click)="Customers()">Customers</button>
+            <button id="Order()" id="btn2" (click)="Order()">Orders</button>
+            <button (click)="About()" id="btn3">About</button>
+            <button (click)="Login()" id="btn4">Login</button>
+            <div>
+            </div>
+          </div>
+        </div> 
+-->

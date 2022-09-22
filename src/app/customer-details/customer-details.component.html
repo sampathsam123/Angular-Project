@@ -1,0 +1,20 @@
+<app-orders></app-orders>
+<div class="image">
+    <span>
+        <img *ngIf="data1.gender==='male'" src="../assets/images/male.png">
+        <img *ngIf="data1.gender==='female'" src="../assets/images/female.png">
+    </span>
+    <div class="cd">
+        <span>{{data1.firstName}} {{data1.lastName}}</span><br>
+        <span>{{data1.address}}</span><br>
+        <span>{{data1.city + " , "+  data1.state.name}}</span><br>
+        <span></span>
+    </div>
+</div>
+<div>
+
+    <google-map class="w-100 p-3"  class="h-100 d-inline-block" >
+
+    </google-map>
+
+</div>

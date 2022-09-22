@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="../assets/images/people.png">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Customer Manager</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#">Customers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+
+<h1>Employee Detalis</h1>
+<form class="form" #customersForm="ngForm" (ngSubmit)="saveCustomer(customersForm)">
+    <div class="form-group" class="col-md-5">
+        <label>ID </label>
+        <input type="id" class="form-control" placeholder="Enter Id" name="id" [(ngModel)]="id">
+    </div>
+    <div class="form-group" class="col-md-5">
+        <label>Name</label>
+        <input type="name" class="form-control" placeholder="Enter Name" name="name" [(ngModel)]="name">
+    </div>
+    <div class="form-group" class="col-md-5">
+        <label>Salary</label>
+        <input type="Salary" class="form-control" placeholder="Enter Salary" name="salary" [(ngModel)]="salary">
+    </div><br>
+    <button type="save" class="btn btn-primary" (click)="save()">Save</button> &nbsp;
+    <button type="add" class="btn btn-primary">Add</button> &nbsp;
+    <button type="Delete" class="btn btn-primary">Delete</button>
+</form>
+
+{{customersForm.value|json}}

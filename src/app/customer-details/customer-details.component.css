@@ -1,0 +1,10 @@
+.cd {
+    margin-left: 150px;
+    margin-top: -80px;
+}
+
+.image span img{
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+}

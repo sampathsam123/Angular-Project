@@ -1,0 +1,54 @@
+<app-header></app-header>
+<form #customersForm="ngForm"  (ngSubmit)="saveCustomer(customersForm)">
+    <div class="panel panel-primary">
+        <div class="form-row">
+            <div class="col-md-5">
+                <label>First Name</label>
+                <input type="text" name='FirstName' [(ngModel)]="FirstName" class="form-control"
+                    placeholder="First Name">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label> Last Name</label>
+            <input type="text" name="Lastame" [(ngModel)]="LastName" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="col-md-5">
+            <label>ID</label>
+            <input type="text" name="Id" [(ngModel)]="id" class="form-control" placeholder="'id">
+        </div>
+        <div class="col-md-5">
+            <label>Gender</label>
+            <div class="form-control">
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="male" [(ngModel)]="gender">
+                    Male
+                </label> &nbsp;
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="female" [(ngModel)]="gender">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label>City</label>
+            <input type="text" name="city" placeholder="city" [(ngModel)]="city" class="form-control">
+        </div>
+        <div class="col-md-5" >
+            <label>State</label>
+            <input type="text" name="state" placeholder="state" [(ngModel)]="state" class="form-control">
+        </div>
+        <div class="col-md-5" >
+            <label>Salary</label>
+            <input type="number" name="salary" placeholder="salary" [(ngModel)]="salary" class="form-control">
+        </div>
+
+        <br>
+        <div class="panel-footer">
+            <button class="btn btn-primary" type="submit" (click)="save()"> Save</button>
+        </div>
+    </div>
+</form>
+
+{{customersForm.value | json}}
+
+{{response| json}}

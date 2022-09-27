@@ -18,6 +18,9 @@ span{
 .active {
     color: black !important;
 }
+span:active{
+    color: black;
+}
 .row{
     padding-left: 10px;
 }

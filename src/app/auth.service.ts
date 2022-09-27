@@ -9,7 +9,7 @@ export class AuthService {
   userData: any;
 
   login(email: string, password: string): Observable<boolean> {
-    if (email === 'admin@gmail.com' && password === 'admin') {
+    if (email === 'admin@gmail.com' && password === 'admin' || email === 'admin@yahoo.com'  && password === 'admin') {
       this.isAuthenticate = true;
       return of(true);
     }

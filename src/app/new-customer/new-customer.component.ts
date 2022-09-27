@@ -35,4 +35,10 @@ export class NewCustomerComponent implements OnInit {
     
   }
 
+
+
+  submitData(value: any) {
+    console.log(value)
+  }
+
 }

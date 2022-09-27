@@ -6,9 +6,8 @@
             <tr *ngFor="let arrayorder of customers.orders;">
                 <td>{{arrayorder.productName }}</td>
                 <td>${{arrayorder.itemCost}}</td>
-                <td>${{customers.totalCost}}</td>
             </tr>
-           
+                <td class="total">${{customers.totalCost}}</td>
         </tbody>
     </table>
 </div>

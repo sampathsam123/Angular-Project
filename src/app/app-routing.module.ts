@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: "list-view", component: ListViewComponent,canActivate: [AuthGuard]},
   { path: "card-view", component: CardViewComponent,canActivate: [AuthGuard]},
   { path: "map-view", component: MapViewComponent,canActivate: [AuthGuard]},
-  {path:"customer-order",component:CustomerOrderComponent,canActivate: [AuthGuard]},
+  {path:"customer-order",component:CustomerOrderComponent},
   {path:"customer-details",component:CustomerDetailsComponent,canActivate: [AuthGuard]},
   {path:"edit-customer",component:EditCustomerComponent,canActivate: [AuthGuard]}, 
   // {path:" ",redirectTo:'/student',pathMatch:'full'},
@@ -44,7 +44,6 @@ const routes: Routes = [
   {path:'parent',component:ParentComponent},
   {path:'child',component:ChildComponent},
   {path:'employee-details',component:EmployeeDetialsComponent},
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {path:'tdf',component:TdfComponent},
   {path:'rf',component:RfComponent},
   {path:'',component:LoginComponent}

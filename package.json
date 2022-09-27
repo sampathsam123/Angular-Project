@@ -7,9 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "gh-build": "ng build --base-href https://github.com/sampathsam123/AngularAssignments.git",
+    "gh-build": "ng build --output-path website --base-href /Angular-Project/",
     "gh-pages": "npm run gh-build && git subtree push --prefix website origin gh-pages"
-
   },
   "private": true,
   "dependencies": {

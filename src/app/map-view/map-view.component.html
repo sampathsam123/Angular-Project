@@ -1,5 +1,27 @@
 <app-navbar></app-navbar>
 
-<div class="map"> 
-    <google-map width="1200px"> </google-map>
+<div class="row">
+    <div class="col-4"><table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Gender</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of Cdata  | paginate: { itemsPerPage: 7, currentPage: page }">
+
+            <td>{{d.firstName}}</td>
+            <td>{{d.lastName}}</td>
+            <td>{{d.address}}</td>
+          </tr>
+         </tbody>
+      </table>
+      <div class="pagination">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
 </div>
+    <div class="col-8"><google-map width="auto"> </google-map> </div>
+</div>
+

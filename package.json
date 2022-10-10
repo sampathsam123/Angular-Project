@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "gh-build": "ng build --output-path website --base-href /Angular-Project/",
-    "gh-pages": "npm run gh-build && git subtree push --prefix website origin gh-pages"
+    "gh-pages": "npm run gh-build && git subtree push --prefix website origin gh-pages",
+    "json-run":"json-server --watch db.json",
+    "json-server":"json-server --watch db.json -port 3000"
   },
   "private": true,
   "dependencies": {

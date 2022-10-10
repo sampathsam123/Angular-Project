@@ -8,6 +8,7 @@ import { ChildComponent } from '../child/child.component';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
+  
 @ViewChild(ChildComponent) viewdata !:ChildComponent //viewchild
   title = " Parent Component"
   inputfirst=''

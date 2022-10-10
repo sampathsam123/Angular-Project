@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
+
 
 @Component({
   selector: 'app-orders',
@@ -8,33 +11,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(private _router:Router , private _activatedRouter : ActivatedRoute) { }
+customersdata: any;
+  constructor(private _router:Router , private _activatedRouter : ActivatedRoute, private customerService : CustomerService) { }
 
   ngOnInit(): void {
-  }
-  CustomerManager(){
-    this._router.navigate(['/card-view',{ relativeTo: this._activatedRouter}]);
-  }
-  Customers(){
-    this._router.navigate(['/list-view'],{relativeTo:this._activatedRouter});
-  }
-  Login() {
-    this._router.navigate(['/login'],{ relativeTo: this._activatedRouter })
 
+    this.get();
   }
-  About(){
-    this._router.navigate(['/about'],{relativeTo:this._activatedRouter})
-  }
-  Order(){
-    this._router.navigate(['/order'],{relativeTo:this._activatedRouter})
-  }
-  CustomerOrder(){
-    this._router.navigate(['customer-order']);
-  }
-  CustomerDetails(){
-    this._router.navigate(['customer-details']);
-  }
-  EditCustomer(){
-    this._router.navigate(['edit-customer']);
+
+  get(){
+    this.customerService.get().subscribe((data)=>{
+      this.customersdata=data;
+      console.log(this.customersdata)
+    })
   }
 }

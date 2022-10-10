@@ -1,44 +1,56 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StudentService } from '../student.service';
+import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
 @Component({
   selector: 'app-new-customer',
   templateUrl: './new-customer.component.html',
   styleUrls: ['./new-customer.component.css']
 })
 export class NewCustomerComponent implements OnInit {
-  FirstName;
-  LastName;
-  id;
-  gender; city; state;
-  salary;
 
-  response;
-  constructor(private _router: Router, private _activatedRouter: ActivatedRoute, private studentService: StudentService) { }
+  @Input() CustomerForm : Customer ={
+    id: undefined,
+    firstName: undefined,
+    lastName: '',
+    gender: '',
+    address: undefined,
+    string: undefined,
+    city: '',
+    state: {
+      abbreviation: '',
+      name: ''
+    },
+    abbreviation: '',
+    name: '',
+    orders: [{
+      productName: '',
+      itemCost: 0,
+  }]  ,
+    latitude: 0,
+    longitude: 0
+  }
+customerdata;
+  constructor(private _router: Router, private _activatedRouter: ActivatedRoute, private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.studentService.getCustomers();
   }
-  saveCustomer(empForm: any) {
-    console.log(empForm);
+  create(){
+    this.customerService.create(this.CustomerForm)
+    .subscribe({
+      next:(data)=>{
+        this._router.navigate(['list-view']);
+      },
+      error:(err) => {
+        console.log(err);
+      }
+    })
   }
-
-  save(){
-    console.log("entered");
-    var employee = {"name":this.FirstName+this.LastName,"salary":this.salary};
-    console.log(employee);
-    this.studentService.saveCustomer(employee).subscribe(data=>{
-      console.log(data);
-      this.response = data;
-      console.log(this.response);
-    });
+ 
     
   }
 
 
 
-  submitData(value: any) {
-    console.log(value)
-  }
 
-}
+

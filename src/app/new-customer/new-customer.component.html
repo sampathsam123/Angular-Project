@@ -1,70 +1,109 @@
-<app-header></app-header>
-<!-- <form #customersForm="ngForm"  (ngSubmit)="saveCustomer(customersForm)">
-    <div class="panel panel-primary">
-        <div class="form-row">
-            <div class="col-md-5">
-                <label>First Name</label>
-                <input type="text" name='FirstName' [(ngModel)]="FirstName" class="form-control"
-                    placeholder="First Name">
-            </div>
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="txtid" class="form-label">id</label>
+            <input
+               type="number"
+               class="form-control" 
+               id="txtid"
+               aria-describedby="emailHelp"
+               name="customersid"
+               [(ngModel)]="CustomerForm.id"
+               />
+        </div>       
+        <div class="mb-3">
+          <label for="txtfirstname" class="form-label">firstName</label>
+          <input
+             type="text"
+             class="form-control" 
+             id="txtname"
+             aria-describedby="emailHelp"
+             name="customersfirstname"
+             [(ngModel)]="CustomerForm.firstName"
+             />
         </div>
-        <div class="col-md-5">
-            <label> Last Name</label>
-            <input type="text" name="Lastame" [(ngModel)]="LastName" class="form-control" placeholder="Last Name">
-        </div>
-         <div class="col-md-5">
-            <label>ID</label>
-            <input type="text" name="Id" [(ngModel)]="id" class="form-control" placeholder="'id">
-        </div>
-        <div class="col-md-5">
-            <label>Gender</label>
-            <div class="form-control">
-                <label class="radio-inline">
-                    <input type="radio" name="gender" value="male" [(ngModel)]="gender">
-                    Male
-                </label> &nbsp;
-                <label class="radio-inline">
-                    <input type="radio" name="gender" value="female" [(ngModel)]="gender">
-                    Female
-                </label>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <label>City</label>
-            <input type="text" name="city" placeholder="city" [(ngModel)]="city" class="form-control">
-        </div>
-        <div class="col-md-5" >
-            <label>State</label>
-            <input type="text" name="state" placeholder="state" [(ngModel)]="state" class="form-control">
-        </div>
-        <div class="col-md-5" >
-            <label>Salary</label>
-            <input type="number" name="salary" placeholder="salary" [(ngModel)]="salary" class="form-control">
-        </div>
-
-        <br>
-        <div class="panel-footer">
-            <button class="btn btn-primary" type="submit" (click)="save()"> Save</button>
-        </div> 
-    </div>
-</form>
-
-{{customersForm.value | json}}
-
-{{response| json}} -->
-
-
-
-
-
-<form #loginForm="ngForm" (ngSubmit)="submitData(loginForm.value)">
-    <div class="main">
-      <div class="input-fields">
-        <input name="name" ngModel placeholder="Name" id="name" type="text" class="input-field" />
-      </div>
-      <div class="input-fields">
-        <input name="age" ngModel placeholder="Age" id="age" type="number" class="input-field" />
-      </div>
-      <button>Add Data </button>
-    </div>
-  </form>
+        <div class="mb-3">
+            <label for="textlastname" class="form-label">lastName</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="textlastname"
+               aria-describedby="emailHelp"
+               name="customerslastname"
+               [(ngModel)]="CustomerForm.lastName"
+               />
+          </div>
+       
+            <label for="txtgender" class="form-label">gender</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtprice"
+               aria-describedby="emailHelp"
+               name="gender"
+               [(ngModel)]="CustomerForm.gender"
+               />
+        
+          <div class="mb-3">
+            <label for="txtaddress" class="form-label">address</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtaddress"
+               aria-describedby="emailHelp"
+               name="customersaddress"
+               [(ngModel)]="CustomerForm.address"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtcity" class="form-label">city</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtcity"
+               aria-describedby="emailHelp"
+               name="customerscity"
+               [(ngModel)]="CustomerForm.city"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtstate" class="form-label">state</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtstate`"
+               aria-describedby="emailHelp"
+               [(ngModel)]="CustomerForm.state"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtorder" class="form-label">orders</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtorder"
+               [(ngModel)]="CustomerForm.orders"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtlatitude" class="form-label">Latitude</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtlatitude"
+               [(ngModel)]="CustomerForm.latitude"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtlongitude" class="form-label">Longitude</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtlongitude"
+               [(ngModel)]="CustomerForm.longitude"
+                   />
+          </div>
+         
+          <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
+      </form>
+</div>

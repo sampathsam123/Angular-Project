@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { GoogleMap,GoogleMapsModule } from '@angular/google-maps';
-import customerDetails from  'D:/TEST/AngularTEST/src/customers.json';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-map-view',
@@ -10,10 +10,16 @@ import customerDetails from  'D:/TEST/AngularTEST/src/customers.json';
 })
 export class MapViewComponent implements OnInit {
   page='';
-  Cdata = customerDetails;
-  constructor(private _router:Router, private _activatedRoute: ActivatedRoute) { }
+  customersdata;
+  constructor(private _router:Router, private _activatedRoute: ActivatedRoute,private customerService:CustomerService) { }
 
   ngOnInit(): void {
+    this.get();
   }
 
+  get(){
+    this.customerService.get().subscribe((data)=>{
+      this.customersdata=data;
+    })
+  }
 }

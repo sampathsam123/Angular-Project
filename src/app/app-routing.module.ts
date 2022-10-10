@@ -23,30 +23,39 @@ import { TdfComponent } from './tdf/tdf.component';
 import { AuthGuard } from './auth.guard';
 import { RfComponent } from './rf/rf.component';
 import { AuthService } from './auth.service';
+import { CutomerinformationComponent } from './cutomerinformation/cutomerinformation.component';
 
 
 const routes: Routes = [
 
-  { path: "Customer-Manager", component: CustomerManagerComponent ,canActivate: [AuthGuard]},
-  { path: "about", component: AboutComponent,canActivate: [AuthGuard]},
-  {path:"order",component:OrdersComponent,canActivate: [AuthGuard]},
-  { path: "login", component: LoginComponent},
-  { path: "list-view", component: ListViewComponent,canActivate: [AuthGuard]},
-  { path: "card-view", component: CardViewComponent,canActivate: [AuthGuard]},
-  { path: "map-view", component: MapViewComponent,canActivate: [AuthGuard]},
-  {path:"customer-order",component:CustomerOrderComponent},
-  {path:"customer-details",component:CustomerDetailsComponent,canActivate: [AuthGuard]},
-  {path:"edit-customer",component:EditCustomerComponent,canActivate: [AuthGuard]}, 
+  { path: "Customer-Manager", component: CustomerManagerComponent },
+  { path: "about", component: AboutComponent },
+  { path: "order", component: OrdersComponent },
+  { path: "login", component: LoginComponent },
+  { path: "list-view", component: ListViewComponent },
+  { path: "card-view", component: CardViewComponent },
+  { path: "map-view", component: MapViewComponent },
+  { path: "customer-order", component: CustomerOrderComponent },
+  { path: "customer-details", component: CustomerDetailsComponent },
+  { path: "edit-customer", component: EditCustomerComponent },
   // {path:" ",redirectTo:'/student',pathMatch:'full'},
-  { path: 'student-detail', component: StudentDetailsComponent},
+  { path: "cutomer-information", component: CutomerinformationComponent },
+  { path: 'student-detail', component: StudentDetailsComponent },
   { path: 'student-list', component: StudentListComponent },
-  {path:'new-customer',component:NewCustomerComponent,canActivate: [AuthGuard]},
-  {path:'parent',component:ParentComponent},
-  {path:'child',component:ChildComponent},
-  {path:'employee-details',component:EmployeeDetialsComponent},
-  {path:'tdf',component:TdfComponent},
-  {path:'rf',component:RfComponent},
-  {path:'',component:LoginComponent}
+  { path: 'new-customer', component: NewCustomerComponent },
+  { path: 'parent', component: ParentComponent},
+  { path: 'child', component: ChildComponent },
+  { path: 'employee-details', component: EmployeeDetialsComponent },
+  { path: 'tdf', component: TdfComponent },
+  { path: 'rf', component: RfComponent, canActivate: [AuthGuard] },
+  { path: '', component: LoginComponent },
+  { path: 'card-view/edit-customer/:id', component: EditCustomerComponent },
+  // { 
+  //   path: 'customer',
+  //   loadChildren: () => import('src/app/customer/customer.module').then(m => m.CustomerModule)
+  // },
+  { path: '', redirectTo: 'cutomer/new-customer', pathMatch: 'full' },
+  // {path:'',redirectTo:'card-view/edit-customer/:id', pathMatch:'full'}
 ];
 
 @NgModule({

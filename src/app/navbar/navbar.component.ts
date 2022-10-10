@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  activeTab = 0;
+  activeTab?: number;
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

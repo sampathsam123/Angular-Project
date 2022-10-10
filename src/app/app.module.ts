@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common'
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule, } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentService } from './student.service';
@@ -16,7 +16,6 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { AboutComponent } from './about/about.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchPipe } from './search.pipe';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './header/header.component';
 import { CustomerOrderComponent } from './customer-orders/customer-order.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
@@ -31,39 +30,49 @@ import { TdfComponent } from './tdf/tdf.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RfComponent } from './rf/rf.component';
+import { CutomerinformationComponent } from './cutomerinformation/cutomerinformation.component';
+import { CustomerService } from './customer.service';
+import { SharedModule } from './shared.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+// import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeListComponent,   
-    myRoutings, CustomerManagerComponent, LoginComponent, NavbarComponent, CardViewComponent,
-     ListViewComponent, MapViewComponent, AboutComponent, OrdersComponent,
-      SearchPipe,
-      HeaderComponent,
-      CustomerOrderComponent,
-      CustomerDetailsComponent,
-      EditCustomerComponent,
-      NewCustomerComponent,
-      ParentComponent,
-      ChildComponent,
-      EmployeeDetialsComponent,
-      LogoutComponent,
-      TdfComponent,
-      RfComponent,
-      
+    EmployeeListComponent,
+    myRoutings, CustomerManagerComponent, LoginComponent, NavbarComponent,
+    CardViewComponent,
+    ListViewComponent, MapViewComponent, AboutComponent, OrdersComponent,
+    SearchPipe,
+    HeaderComponent,
+    CustomerOrderComponent,
+    CustomerDetailsComponent,
+    EditCustomerComponent,
+    NewCustomerComponent,
+    ParentComponent,
+    ChildComponent,
+    EmployeeDetialsComponent,
+    LogoutComponent,
+    TdfComponent,
+    RfComponent,
+    CutomerinformationComponent,
+    // SharedModule
+
   ],
   imports: [
+    // SharedModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
-    HttpClientModule,
+    // CommonModule,
     NgxPaginationModule,
-    GoogleMapsModule,  
-    BrowserModule,  
+    HttpClientModule,
+    GoogleMapsModule,
+    // BrowserModule,
+    // CustomerModule
   ],
-  providers: [StudentService],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

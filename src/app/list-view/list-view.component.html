@@ -18,21 +18,19 @@
                     <th>Order Total</th>
                 </thead>
                 <tbody class="tablebody">
-                    <tr *ngFor="let d of customers | search:search2">
+                    <tr *ngFor="let d of customersdata | search:search2">
                         <td> <img *ngIf="d.gender==='male'" src="../assets/images/male.png">
                             <img *ngIf="d.gender==='female'" src="../assets/images/female.png">
                         </td>
-                        <td class="td" (click)="ViewsingleData(d)" style="color:#007af8;">{{d.firstName}}</td>
+                        <td class="td" (click)="ViewsingleData(d, 'firstName')" style="color:#007af8;">{{d.firstName}}</td>
                         <td class="td">{{d.lastName}}</td>
                         <td class="td">{{d.address}}</td>
                         <td class="td">{{d.city}}</td>
                         <td class="td">{{d.state.name}}</td>
                         <td class="td">
-                            <div>
-                                {{ d.totalCost | number}}
-                            </div>
+                            {{d.totalCost | number }}
                         </td>
-                        <td class="Vieworder" (click)="ViewOrder(d)">
+                        <td class="Vieworder" (click)="ViewsingleData(d, 'viewOrder')">
                             ViewOrders
                         </td>
                     </tr>

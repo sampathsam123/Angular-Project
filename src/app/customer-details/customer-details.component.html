@@ -1,20 +1,45 @@
-<app-orders></app-orders>
-<div class="image">
-    <span>
-        <img *ngIf="data1.gender==='male'" src="../assets/images/male.png">
-        <img *ngIf="data1.gender==='female'" src="../assets/images/female.png">
-    </span>
-    <div class="cd">
-        <span>{{data1.firstName}} {{data1.lastName}}</span><br>
-        <span>{{data1.address}}</span><br>
-        <span>{{data1.city + " , "+  data1.state.name}}</span><br>
-        <span></span>
+
+<div class="container-fluid">
+    <div class="font-icon">
+        <img src="../../assets/images/1.png" alt="">
+        <button>Customer Information</button>
+    </div>
+    <div class="row">
+        <span class="col-sm-2 p-3 bg-white btn" (click)="isCustomerOrder = false; isCustomerDetails = true; isEditCustomer = false"> <i class="fa fa-list" aria-hidden="true"></i>
+            Customer Details
+        </span>
+        <span class="col-sm-2 p-3 bg-white btn" (click)="isCustomerOrder = true; isCustomerDetails = false; isEditCustomer = false"> <i class="fa fa-tag" aria-hidden="true"></i>
+            Customer Order
+        </span>
+        <span class="col-sm-2 p-3 bg-white btn" (click)="isCustomerOrder = false; isEditCustomer = true ; isCustomerDetails=false"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            Edit Customer
+        </span>
     </div>
 </div>
-<div>
-
-    <google-map class="w-100 p-3"  class="h-100 d-inline-block" >
-
-    </google-map>
-
+<div *ngIf="isCustomerDetails">
+    <div class="image">
+        <span>
+            <img *ngIf="data1?.gender==='male'" src="../assets/images/male.png">
+            <img *ngIf="data1?.gender==='female'" src="../assets/images/female.png">
+        </span>
+        <div class="cd">
+            <span>{{data1?.firstName}} {{data1?.lastName}}</span><br>
+            <span>{{data1?.address}}</span><br>
+            <span>{{data1?.city + " , "+  data1?.state.name}}</span><br>
+            <span></span>
+        </div>
+    </div>
+    <div>
+    
+        <google-map class="w-100 p-3"  class="h-100 d-inline-block" >
+    
+        </google-map>
+    
+    </div>
+</div>
+<div *ngIf="isCustomerOrder">
+    <app-customer-order [orderDetails]="currentCustomerOrderDetails"></app-customer-order>
+</div>
+<div *ngIf="isEditCustomer">
+    <app-edit-customer [orderDetails]="currentEditCustomer"></app-edit-customer>
 </div>

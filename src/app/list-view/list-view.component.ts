@@ -1,26 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import customerData from 'D:/TEST/AngularTEST/src/customers.json';
-
-interface customerInterface {
-  id: Number;
-  firstName: Number;
-  lastName: string;
-  gender: string;
-  address: number, string: any;
-  city: string;
-  state: {
-    abbreviation: string,
-    name: string
-  }
-  orders: [{
-    productName: string,
-    itemCost: number
-  }]
-  latitude: number;
-  longitude: number;
-}
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-list-view',
@@ -31,36 +12,45 @@ export class ListViewComponent implements OnInit {
   public customer: any[];
   total = ''
   search2 = ''
-  customersdata = ''
-  constructor(private _router: Router, _activated: ActivatedRoute) { }
+  customersdata ;
+  constructor(private _router: Router, _activated: ActivatedRoute, private customerService:CustomerService) { }
 
   ngOnInit(): void {    
-    this.customers.map((customer) => {
-      customer['totalCost'] = 0;
-      if (customer?.orders) {
-        customer.orders.map((order) => {
-          customer['totalCost'] += order.itemCost;
-        });
-      }
+
+    this.get();
+  }
+  totalCost(totalCost: any) {
+    throw new Error('Method not implemented.');
+  }
+  get(){
+    this.customerService.get().subscribe((data) => {
+      this.customersdata = data;
+      this.customersdata.map((customer) => {
+        customer['totalCost'] = 0;
+        if (customer?.orders) {
+          customer.orders.map((order) => {
+            customer['totalCost'] += (order.itemCost);
+          });
+          console.log(this.totalCost)
+        }
+      });
     });
   }
-  customers: customerInterface[] = customerData;
-  
 
-  ViewsingleData(data: any) {
+  ViewsingleData(data: any, showTab: string) {
     this._router.navigate(['customer-details'], {
       queryParams: {
-      data:JSON.stringify(data)
+      data:JSON.stringify(data),
+      showTab: showTab
       }
     })
     console.log(data);
   }
 
-  ViewOrder(data1:any){
-    console.log(data1)
+  ViewOrder(data:any){
     this._router.navigate(['customer-order'],{
       queryParams:{
-        ...data1
+        id: data.id
       }
     })
   }

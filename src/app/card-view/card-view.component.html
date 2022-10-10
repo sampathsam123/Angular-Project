@@ -9,11 +9,11 @@
             </div>
         </div>
         <div class="col-md-3"
-            *ngFor="let d of customers  | paginate: { itemsPerPage: 8, currentPage: page } | search : search1">
+            *ngFor="let d of customersdata  | paginate: { itemsPerPage: 8, currentPage: page } | search : search1">
             <div class="card-view tc">
                 <div class="cv-header">
                     <span>{{ d.firstName + ' ' + d.lastName }}
-                        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="EditCustomer(d)"></i>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['edit-customer', d.id]"></i>
                     </span>
                 </div>
                 <div>
@@ -26,7 +26,7 @@
                         <span class="data">{{d.city}}</span> <br>
                         <span class="data"> {{d.state.name}}</span><br>
 
-                        <button (click)="ViewOrder(d)">
+                        <button (click)="ViewOrder(d,'viewOrder')">
                             ViewOrders
                         </button>
                     </div>
@@ -41,3 +41,5 @@
 <div class="pagination">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
+
+<br>

@@ -1,27 +1,8 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import customerData from 'D:/TEST/AngularTEST/src/customers.json';
+import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
 
-interface customerInterface {
-  id: Number;
-  firstName: Number;
-  lastName: string;
-  gender: string;
-  address: number, string: any;
-  city: string;
-  state: {
-    abbreviation: string,
-    name: string
-  }
-  abbreviation: string;
-  name: string;
-  orders: [{
-    productName: string,
-    itemCost: number
-  }]
-  latitude: number;
-  longitude: number;
-};
 @Component({
   selector: 'app-card-view',
   templateUrl: './card-view.component.html',
@@ -29,25 +10,34 @@ interface customerInterface {
 })
 
 export class CardViewComponent implements OnInit {
-  public customer: any[];
+  @Input() url=[];
   search1 = '';
   page = '';
-  customers: customerInterface[] = customerData;
-  customersdata;
+ // customers: customerInterface[] = customerData;
+  customersdata ;
 
-  constructor(private _router: Router, private _activatedRouter: ActivatedRoute) { }
+  constructor(private _router: Router, private _activatedRouter: ActivatedRoute ,private customerService:CustomerService) { }
 
-  ngOnInit(): void { }
-  ViewOrder(data: any) {
-    this._router.navigate(['customer-order'], {
+  ngOnInit(): void { 
+    this.get();
+  }
+  ViewOrder(data: any , showTab : string) {
+    this._router.navigate(['customer-details'], {
       queryParams: {
-        ...data
+        // ...data , 
+        data:JSON.stringify(data),
+        showTab:showTab
       }
     });
-    console.log(data);
   }
   EditCustomer() {
-    this._router.navigate(['edit-customer', this.customers])
+    this._router.navigate(['edit-customer'])
+  }
+
+  get(){
+    this.customerService.get().subscribe((data)=>{
+      this.customersdata=data;
+    })
   }
 
 }

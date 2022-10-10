@@ -1,2 +1,135 @@
-<app-header></app-header>
-<h1>edit-customer</h1>
+<!-- 
+<div class="container">
+    <legend>Edit Item</legend>
+    <form>
+      <div class="mb-3">
+        <label for="Name" class="form-label">firstName</label>
+        <input 
+            type="text" 
+            name="name" 
+            [(ngModel)] = "CustomerForm.firstName" 
+            class="form-control" id="txtName"
+         />
+      </div>
+      <div class="mb-6">
+        <label for=""></label>
+      </div>
+      <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </form>
+</div> -->
+
+
+
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="txtid" class="form-label">id</label>
+            <input
+               type="number"
+               class="form-control" 
+               id="txtid"
+               aria-describedby="emailHelp"
+               name="customersid"
+               [(ngModel)]="CustomerForm.id"
+               />
+        </div>       
+        <div class="mb-3">
+          <label for="txtfirstname" class="form-label">firstName</label>
+          <input
+             type="text"
+             class="form-control" 
+             id="txtname"
+             aria-describedby="emailHelp"
+             name="customersfirstname"
+             [(ngModel)]="CustomerForm.firstName"
+             />
+        </div>
+        <div class="mb-3">
+            <label for="textlastname" class="form-label">lastName</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="textlastname"
+               aria-describedby="emailHelp"
+               name="customerslastname"
+               [(ngModel)]="CustomerForm.lastName"
+               />
+          </div>
+       
+            <label for="txtgender" class="form-label">gender</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtprice"
+               aria-describedby="emailHelp"
+               name="gender"
+               [(ngModel)]="CustomerForm.gender"
+               />
+        
+          <div class="mb-3">
+            <label for="txtaddress" class="form-label">address</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtaddress"
+               aria-describedby="emailHelp"
+               name="customersaddress"
+               [(ngModel)]="CustomerForm.address"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtcity" class="form-label">city</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtcity"
+               aria-describedby="emailHelp"
+               name="customerscity"
+               [(ngModel)]="CustomerForm.city"
+                   />
+          </div>
+          <div class="mb-3">
+            <label for="txtstate" class="form-label">state</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtstate`"
+               aria-describedby="emailHelp"
+               name="customerscity"
+               [(ngModel)]="CustomerForm.state.name"
+             />
+          </div>
+          <div class="mb-3">
+            <label for="txtorder" class="form-label">orders</label>
+            <input
+               type="text"
+               class="form-control" 
+               id="txtorder"
+               name="customerordersproductname"
+               [(ngModel)]="CustomerForm.orders"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="txtlatitude" class="form-lable">Latitude</label>
+            <input
+               type="number"
+              class="form-control"
+              id="txtlatitude"
+              name="customerslatitude"
+              [(ngModel)]="CustomerForm.latitude"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="txtl0ngitude" class="form-lable">Longitude</label>
+            <input 
+                type="number" 
+                id="txtlongitude"
+                class="form-control"
+                name="customerslongitude"
+                [(ngModel)]="CustomerForm.longitude"
+                >
+          </div>
+         
+          <button type="button" class="btn btn-primary" (click)="update()">Upadte</button>
+      </form>
+</div>

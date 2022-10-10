@@ -1,17 +1,17 @@
-<app-header></app-header>
+
 <div class="container-fluid">
   <div class="customer-image">
     <img src="../assets/images/1.png">
     <p>Customers</p>
   </div>
   <div class="row">
-    <span class="col-sm-2 p-3 bg-white" [class.active]="activeTab === 0" (click)="activeTab = 0; CardView()"><i class="fa fa-windows"></i> Card
+    <span class="col-sm-2 p-3 bg-white " [class.active]="activeTab === 0" (click)="activeTab = 0; CardView()"><i class="fa fa-windows"></i> Card
       View</span>
-    <span class="col-sm-2 p-3 bg-white" [class.active]="activeTab === 1" (click)="activeTab = 1; ListView()"><i class="fa fa-bars"></i> List
+    <span class="col-sm-2 p-3 bg-white " [class.active]="activeTab === 1" (click)="activeTab = 1; ListView()"><i class="fa fa-bars"></i> List
       View</span>
-    <span class="col-sm-2 p-3 bg-white" [class.active]="activeTab === 2" (click)="activeTab = 2; Map()"><i class="fa fa-map-marker"></i> Map
+    <span class="col-sm-2 p-3 bg-white " [class.active]="activeTab === 2" (click)="activeTab = 2; Map()"><i class="fa fa-map-marker"></i> Map
       View</span>
-    <span class="col-sm-2 p-3 bg-white" [class.active]="activeTab === 3" (click)="activeTab = 3; NewCustomer()"><i class="fa fa-plus"></i> New
+    <span class="col-sm-2 p-3 bg-white " [class.active]="activeTab === 3" (click)="activeTab = 3; NewCustomer()"><i class="fa fa-plus"></i> New
       Customer</span>
   </div>
 </div>

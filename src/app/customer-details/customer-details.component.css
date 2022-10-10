@@ -8,3 +8,32 @@
     width: 100px;
     height: 100px;
 }
+
+
+.font-icon i{
+    margin: 15px;
+}
+
+.font-icon button {
+    border: none;
+    background: none;
+    font-size: 30px;
+    padding-top: 15px;
+}
+.font-icon img {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 16px;
+}
+.row{
+    margin: 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn{
+    color: #919191;
+}
+.btn:active{
+    color: black;
+}
+

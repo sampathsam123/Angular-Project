@@ -32,7 +32,7 @@ export class CardViewComponent implements OnInit {
     });
   }
   EditCustomer() {
-    this._router.navigate(['edit-customer'])
+    this._router.navigate(['/editcomponent'])
   }
 
   get(){

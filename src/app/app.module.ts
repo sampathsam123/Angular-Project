@@ -30,7 +30,6 @@ import { TdfComponent } from './tdf/tdf.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RfComponent } from './rf/rf.component';
-import { CutomerinformationComponent } from './cutomerinformation/cutomerinformation.component';
 import { CustomerService } from './customer.service';
 import { SharedModule } from './shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -55,7 +54,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LogoutComponent,
     TdfComponent,
     RfComponent,
-    CutomerinformationComponent,
     // SharedModule
 
   ],

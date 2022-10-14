@@ -30,9 +30,7 @@
     font-size: 15px;
     cursor: pointer;
 }
-.btn{
-    color: #919191;
-}
+
 .btn:active{
     color: black;
 }

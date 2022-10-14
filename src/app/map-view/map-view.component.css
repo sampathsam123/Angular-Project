@@ -22,3 +22,7 @@
     padding: 10px;
    
 }
+
+/* ::ng-deep .mapComp{
+    color: #000 !important;
+} */

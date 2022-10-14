@@ -1,109 +1,41 @@
+<app-header></app-header>
 <div class="container">
-    <form>
-        <div class="mb-3">
-            <label for="txtid" class="form-label">id</label>
-            <input
-               type="number"
-               class="form-control" 
-               id="txtid"
-               aria-describedby="emailHelp"
-               name="customersid"
-               [(ngModel)]="CustomerForm.id"
-               />
-        </div>       
-        <div class="mb-3">
-          <label for="txtfirstname" class="form-label">firstName</label>
-          <input
-             type="text"
-             class="form-control" 
-             id="txtname"
-             aria-describedby="emailHelp"
-             name="customersfirstname"
-             [(ngModel)]="CustomerForm.firstName"
-             />
-        </div>
-        <div class="mb-3">
-            <label for="textlastname" class="form-label">lastName</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="textlastname"
-               aria-describedby="emailHelp"
-               name="customerslastname"
-               [(ngModel)]="CustomerForm.lastName"
-               />
-          </div>
-       
-            <label for="txtgender" class="form-label">gender</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtprice"
-               aria-describedby="emailHelp"
-               name="gender"
-               [(ngModel)]="CustomerForm.gender"
-               />
-        
-          <div class="mb-3">
-            <label for="txtaddress" class="form-label">address</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtaddress"
-               aria-describedby="emailHelp"
-               name="customersaddress"
-               [(ngModel)]="CustomerForm.address"
-                   />
-          </div>
-          <div class="mb-3">
-            <label for="txtcity" class="form-label">city</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtcity"
-               aria-describedby="emailHelp"
-               name="customerscity"
-               [(ngModel)]="CustomerForm.city"
-                   />
-          </div>
-          <div class="mb-3">
-            <label for="txtstate" class="form-label">state</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtstate`"
-               aria-describedby="emailHelp"
-               [(ngModel)]="CustomerForm.state"
-                   />
-          </div>
-          <div class="mb-3">
-            <label for="txtorder" class="form-label">orders</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtorder"
-               [(ngModel)]="CustomerForm.orders"
-                   />
-          </div>
-          <div class="mb-3">
-            <label for="txtlatitude" class="form-label">Latitude</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtlatitude"
-               [(ngModel)]="CustomerForm.latitude"
-                   />
-          </div>
-          <div class="mb-3">
-            <label for="txtlongitude" class="form-label">Longitude</label>
-            <input
-               type="text"
-               class="form-control" 
-               id="txtlongitude"
-               [(ngModel)]="CustomerForm.longitude"
-                   />
-          </div>
-         
-          <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
-      </form>
+  <form class="row g-3">
+
+    <div class="col-md-6">
+      <label for="txtfirstname" class="form-label">firstName</label>
+      <input type="text" class="form-control" id="txtname" aria-describedby="emailHelp" name="customersfirstname"
+        [(ngModel)]="CustomerForm.firstName" />
+    </div>
+    <div class="col-md-6">
+      <label for="textlastname" class="form-label">lastName</label>
+      <input type="text" class="form-control" id="textlastname" aria-describedby="emailHelp" name="customerslastname"
+        [(ngModel)]="CustomerForm.lastName" />
+    </div>
+    <div class="col-md-6">
+      <label for="txtgender" class="form-label">gender</label>
+      <input type="text" class="form-control" id="txtprice" aria-describedby="emailHelp" name="gender"
+        [(ngModel)]="CustomerForm.gender" />
+    </div>
+
+    <div class="col-md-6">
+      <label for="txtaddress" class="form-label">address</label>
+      <input type="text" class="form-control" id="txtaddress" aria-describedby="emailHelp" name="customersaddress"
+        [(ngModel)]="CustomerForm.address" />
+    </div>
+    <div class="col-md-6">
+      <label for="txtcity" class="form-label">city</label>
+      <input type="text" class="form-control" id="txtcity" aria-describedby="emailHelp" name="customerscity"
+        [(ngModel)]="CustomerForm.city" />
+    </div>
+    <div class="col-md-6">
+      <label for="txtstate" class="form-label">state</label>
+      <input type="text" class="form-control" id="txtstate`" aria-describedby="emailHelp"
+        [(ngModel)]="CustomerForm.state" />
+    </div>
+  
+   
+    <br>
+    <button type="button" class="btn btn-primary btn-lg" (click)="create()">Submit</button>
+  </form>
 </div>

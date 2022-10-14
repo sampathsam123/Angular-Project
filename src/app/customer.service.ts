@@ -11,22 +11,22 @@ export class CustomerService {
   }
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  get(){
+  get() {
     return this.http.get("http://localhost:3000/customers");
   }
-  create(paylode:Customer){
-    return this.http.post("http://localhost:3000/customers",paylode);
+  create(paylode: Customer) {
+    return this.http.post("http://localhost:3000/customers", paylode);
   }
-getById(id:number){
-  return this.http.get(`http://localhost:3000/customers/${id}`)
-}
-update(paylode:Customer){
- return this.http.put(`http://localhost:3000/customers/${paylode.id}`,paylode);
-}
-delete(id:number){
-  return this.http.delete(`http://localhost:3000/customers/${id}`);
-}
+  getById(id: number) {
+    return this.http.get(`http://localhost:3000/customers/${id}`)
+  }
+  update(paylode: Customer) {
+    return this.http.put(`http://localhost:3000/customers/${paylode.id}`, paylode);
+  }
+  delete(paylode: Customer) {
+    return this.http.delete(`http://localhost:3000/customers/${paylode.id}`);
+  }
 
 }

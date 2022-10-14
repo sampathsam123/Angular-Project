@@ -1,4 +1,5 @@
-[
+{
+"customers":[
     {
         "id": 1,
         "firstName": "Ted",
@@ -444,3 +445,4 @@
         "longitude": -43.181836
     }
 ]
+}

@@ -6,7 +6,8 @@ import { CustomerService } from '../customer.service';
 @Component({
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
-  styleUrls: ['./list-view.component.css']
+  styleUrls: ['./list-view.component.css'],
+  
 })
 export class ListViewComponent implements OnInit {
   public customer: any[];
@@ -16,7 +17,6 @@ export class ListViewComponent implements OnInit {
   constructor(private _router: Router, _activated: ActivatedRoute, private customerService:CustomerService) { }
 
   ngOnInit(): void {    
-
     this.get();
   }
   totalCost(totalCost: any) {
@@ -38,22 +38,23 @@ export class ListViewComponent implements OnInit {
   }
 
   ViewsingleData(data: any, showTab: string) {
+    console.log(data);
     this._router.navigate(['customer-details'], {
       queryParams: {
       data:JSON.stringify(data),
       showTab: showTab
-      }
+      },skipLocationChange:true
     })
     console.log(data);
   }
 
-  ViewOrder(data:any){
-    this._router.navigate(['customer-order'],{
-      queryParams:{
-        id: data.id
-      }
-    })
-  }
+  // ViewOrder(data:any){
+  //   this._router.navigate(['customer-order'],{
+  //     queryParams:{
+  //       id: data.id
+  //     }
+  //   })
+  // }
 
 
 }

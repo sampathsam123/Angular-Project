@@ -1,4 +1,7 @@
 export interface Customer {
+  hide();
+  show();
+  filter(arg0: (_: any) => boolean): Customer;
     id: Number;
     firstName: Number;
     lastName: string;

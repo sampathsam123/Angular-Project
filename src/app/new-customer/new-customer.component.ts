@@ -26,11 +26,20 @@ export class NewCustomerComponent implements OnInit {
     orders: [{
       productName: '',
       itemCost: 0,
-  }]  ,
+    }],
     latitude: 0,
-    longitude: 0
+    longitude: 0,
+    filter: function (arg0: (_: any) => boolean): Customer {
+      throw new Error('Function not implemented.');
+    },
+    hide: function () {
+      throw new Error('Function not implemented.');
+    },
+    show: function () {
+      throw new Error('Function not implemented.');
+    }
   }
-customerdata;
+
   constructor(private _router: Router, private _activatedRouter: ActivatedRoute, private customerService: CustomerService) { }
 
   ngOnInit(): void {
@@ -45,6 +54,7 @@ customerdata;
         console.log(err);
       }
     })
+    alert("New-Customer Data Successfully Added")
   }
  
     

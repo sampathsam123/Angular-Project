@@ -8,7 +8,7 @@ body {
   margin-top: 80px;
   height: auto;
   text-align: center;
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  
 }
 
 .login-key {
@@ -70,11 +70,13 @@ input[type=password] {
   background-color:  #ECF0F5;
   color:black;
 }
-
+/* 
 input:focus {
   outline: none;
   box-shadow: 0 0 0;
-}
+} */
+
+
 
 label {
   margin-bottom: 0px;
@@ -93,14 +95,13 @@ label {
   border-radius: 5px;
   font-weight: bold;
   letter-spacing: 1px;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+ 
 }
 
 
 
 
 .login-btm {
-  /* float: left; */
   margin-left: 35px;
 }
 
@@ -132,3 +133,29 @@ label {
 
 
 
+
+
+
+.container-fluid{
+  background-color: #007af8;
+  cursor: pointer;
+}
+.container-fluid:hover{
+  background-color: rgb(1, 16, 18);
+  transition: background-color 4s;
+}
+#navbarSupportedContent{
+  color: white;
+}
+.btn-primary{
+  color:black;
+  background-color: white;
+  margin-left: 10px;
+}
+.nav-link {
+  margin-left: 10px;
+  color: white;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show .nav-link{
+  color:#efefef;
+}

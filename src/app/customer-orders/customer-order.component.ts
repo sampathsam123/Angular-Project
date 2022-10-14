@@ -23,10 +23,11 @@ selectedTotalCost: number = 0;
   console.log("Order Details", this.orderDetails);
   this.customers= this.orderDetails;
   
-//   this.customers = data[(parseInt(this._activatedRouter.queryParams['_value'].id)-1)];
-//   this.customers.orders.map((e) => {
-//     this.selectedTotalCost += e.itemCost;
-//   });
+  this.customers.orders.map((e) => {
+    this.selectedTotalCost += e.itemCost;
+  });
+  // this.customers = data[(parseInt(this._activatedRouter.queryParams['_value'].id)-1)];
+   
  
 // console.log(this.customers);
 

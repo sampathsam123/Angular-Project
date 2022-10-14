@@ -8,9 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   activeTab?: number;
-  constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
+  constructor(public _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.activeTab)
+
   }
  
   CardView(){

@@ -515,28 +515,6 @@
       "latitude": 0,
       "longitude": 0,
       "id": 34
-    },
-    {
-      "firstName": "a",
-      "lastName": "a",
-      "gender": "male",
-      "address": "xyz",
-      "city": "hyd",
-      "state": {
-        "abbreviation": "",
-        "name": ""
-      },
-      "abbreviation": "",
-      "name": "",
-      "orders": [
-        {
-          "productName": "",
-          "itemCost": 0
-        }
-      ],
-      "latitude": 0,
-      "longitude": 0,
-      "id": 35
     }
   ]
 }

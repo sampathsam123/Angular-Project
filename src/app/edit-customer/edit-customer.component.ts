@@ -16,7 +16,6 @@ export class EditCustomerComponent implements OnInit {
  deleteCustomer: any;
  deleteModel:any;
  idTodelete: number = 0;
-
 customerdata;
 @Input() Editcustomer : any ;
   constructor(private _router:Router , private _activatedRouter:ActivatedRoute , private customerService :CustomerService)  { }
@@ -35,7 +34,6 @@ customerdata;
 
     })
    this.CustomerForm = this.Editcustomer;
-
    this.deleteModel = new window.bootstrap.Model(
     document.getElementById('deleteModal')
    );

@@ -5,13 +5,13 @@
     <p>Customers</p>
   </div>
   <div class="row align-items-center">
-    <span class="col-sm-2 p-3  cardComp" [style.color]="_router.url.includes('card-view') ? 'black' : 'color: #919191;'"  (click)="activeTab = 0; CardView()"><i class="fa fa-windows"></i> Card
+    <span class="col-sm-2 p-3  cardComp" [style.color]="_router.url.includes('card-view') ? 'black' : 'color: #919191;'"  (click)=" CardView()"><i class="fa fa-windows"></i> Card
       View</span>
-    <span class="col-sm-2 p-3 listComp" [style.color]="_router.url.includes('list-view') ? 'black' : 'color: #919191;'"  (click)="activeTab = 0; ListView()"><i class="fa fa-bars"></i> List
+    <span class="col-sm-2 p-3 listComp" [style.color]="_router.url.includes('list-view') ? 'black' : 'color: #919191;'"  (click)="ListView()"><i class="fa fa-bars"></i> List
       View</span>
-    <span class="col-sm-2  mapComp" [style.color]="_router.url.includes('map-view') ? 'black' : 'color: #919191;'"  (click)="activeTab = 0; Map()"><i class="fa fa-map-marker"></i> Map
+    <span class="col-sm-2  mapComp" [style.color]="_router.url.includes('map-view') ? 'black' : 'color: #919191;'"  (click)="Map()"><i class="fa fa-map-marker"></i> Map
       View</span>
-    <span class="col-sm-2 p-3 newComp" [style.color]="_router.url.includes('new-customer') ? 'black' : 'color: #919191;'" (click)="activeTab = 0; NewCustomer()"><i class="fa fa-plus"></i> New
+    <span class="col-sm-2 p-3 newComp" [style.color]="_router.url.includes('new-customer') ? 'black' : 'color: #919191;'" (click)="NewCustomer()"><i class="fa fa-plus"></i> New
       Customer</span>
   </div>
 </div>

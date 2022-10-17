@@ -32,7 +32,6 @@ const routes: Routes = [
   { path: "customer-order", component: CustomerOrderComponent, canActivate: [AuthGuard] },
   { path: "customer-details", component: CustomerDetailsComponent, canActivate: [AuthGuard] },
   // {path:" ",redirectTo:'/student',pathMatch:'full'},
-  { path: 'student-detail', component: StudentDetailsComponent },
   { path: 'new-customer', component: NewCustomerComponent, canActivate: [AuthGuard] },
   { path: 'editcomponent', component: EditcopmComponent, canActivate: [AuthGuard] },
   { path: '', component: LoginComponent },

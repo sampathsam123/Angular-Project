@@ -9,8 +9,8 @@
     "test": "ng test",
     "gh-build": "ng build --output-path website --base-href /Angular-Project/",
     "gh-pages": "npm run gh-build && git subtree push --prefix website origin gh-pages",
-    "json-run":"json-server --watch db.json",
-    "json-server":"json-server --watch db.json -port 3000"
+    "json-run": "json-server --watch db.json",
+    "json-server": "json-server --watch db.json -port 3000"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +28,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "angular-material": "^1.2.5",
+    "bootstrap": "^5.2.2",
     "font-awesome": "^4.7.0",
     "jwt-decode": "^3.1.2",
     "ngx-pagination": "^6.0.2",

@@ -13,7 +13,6 @@ declare var window: any;
 export class EditCustomerComponent implements OnInit {
  
  CustomerForm : Customer;
-
  deleteCustomer: any;
  deleteModel:any;
  idTodelete: number = 0;

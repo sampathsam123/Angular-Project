@@ -34,6 +34,7 @@ currentEditCustomer=[];
       (data.showTab == "firstName")?this.isCustomerDetails = true:this.isCustomerOrder = true;
       this.currentCustomerOrderDetails = this.data1;
     })
+    
     this.customers=customerdata; 
     console.log(this.customers); 
    // this.data1 = data[(parseInt(this._activatedRouter.queryParams['_value'].id,10) - 1)];   

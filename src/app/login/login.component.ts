@@ -45,19 +45,4 @@ export class LoginComponent implements OnInit {
      
   }
 
-  
-  // CustomerManager(){
-  //   this._router.navigate(['/Customer-Manager']);
-  // }
-  // Customers(){
-  //   this._router.navigate(['/list-view'],{relativeTo:this._activatedRoute});
-  // }
-  // Login() {
-  //   this._router.navigate(['/login'],{ relativeTo: this._activatedRoute })
-
-  // }
-  // About(){
-  //   this._router.navigate(['/about'],{relativeTo:this._activatedRoute})
-  // }
-
 }

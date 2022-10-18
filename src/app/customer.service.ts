@@ -6,10 +6,12 @@ import { Customer } from './customer';
   providedIn: 'root'
 })
 export class CustomerService {
+  map() {
+    throw new Error('Method not implemented.');
+  }
   data(data: any): any {
     throw new Error('Method not implemented.');
   }
-
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +21,7 @@ export class CustomerService {
   create(paylode: Customer) {
     return this.http.post("http://localhost:3000/customers", paylode);
   }
-  getById(id: number) {
+  getById(id: number | string) {
     return this.http.get(`http://localhost:3000/customers/${id}`)
   }
   update(paylode: Customer) {

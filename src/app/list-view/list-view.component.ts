@@ -39,11 +39,10 @@ export class ListViewComponent implements OnInit {
 
   ViewsingleData(data: any, showTab: string) {
     console.log(data);
-    this._router.navigate(['customer-details'], {
+    this._router.navigate(['customer-details', data.id], {
       queryParams: {
-      data:JSON.stringify(data),
       showTab: showTab
-      },skipLocationChange:true
+      }
     })
     console.log(data);
   }

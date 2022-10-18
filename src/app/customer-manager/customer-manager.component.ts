@@ -20,7 +20,6 @@ export class CustomerManagerComponent implements OnInit {
   }
 
   onView(p1) {
-    debugger;
     this.viewParams.view = p1;
   }
 

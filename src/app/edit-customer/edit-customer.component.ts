@@ -21,22 +21,24 @@ customerdata;
   constructor(private _router:Router , private _activatedRouter:ActivatedRoute , private customerService :CustomerService)  { }
 
   ngOnInit(): void {
-    debugger;
+    // debugger;
     this._activatedRouter.paramMap.subscribe((param)=>{
       var id = Number(param.get('id'));
       this.getById(id);
     })
-    this._activatedRouter.queryParams.subscribe((params: {data: string, showTab: string})=>{
-      console.log(params);
-      let data1 = JSON.parse(params.data);
-      var id  = data1["id"];
-      this.getById(id);
+    // this._activatedRouter.queryParams.subscribe((params: {data: string, showTab: string})=>{
+    //   console.log(params);
+    //   let data1 = JSON.parse(params.data);
+    //   var id  = data1["id"];
+    //   this.getById(id);
 
-    })
-   this.CustomerForm = this.Editcustomer;
-   this.deleteModel = new window.bootstrap.Model(
-    document.getElementById('deleteModal')
-   );
+    // })
+  // this.CustomerForm = this.Editcustomer;
+  //  this.deleteModel = new window.bootstrap.Model(
+  //   document.getElementById('deleteModal')
+  //  );
+    // this.CustomerForm = this.Editcustomer;
+    // console.log("form", this.CustomerForm)
   }
 getById(id:number){
   this.customerService.getById(id).subscribe((data1: Customer)=>{

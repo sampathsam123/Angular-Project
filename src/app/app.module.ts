@@ -27,7 +27,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CustomerService } from './customer.service';
 import { SharedModule } from './shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { EditcopmComponent } from './editcopm/editcopm.component';
 // import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
@@ -49,7 +48,6 @@ import { EditcopmComponent } from './editcopm/editcopm.component';
     EditCustomerComponent,
     NewCustomerComponent,
     LogoutComponent,
-    EditcopmComponent
     // SharedModule
 
   ],

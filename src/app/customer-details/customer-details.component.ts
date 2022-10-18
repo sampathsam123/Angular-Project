@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import customerdata from 'src/customers.json';
 import { CustomerService } from '../customer.service';
 
 
@@ -24,21 +23,23 @@ currentEditCustomer=[];
   id: boolean;
 
 
-  constructor(private router:Router , private _activatedRouter:ActivatedRoute , private http:HttpClient) { }
+  constructor(private router:Router , private _activatedRouter:ActivatedRoute , private http:HttpClient,private customerService: CustomerService) { }
 
   ngOnInit(): void {
     this._activatedRouter.queryParams.subscribe((data: any)=>{
       console.log(data);
-      //  this.firstName = data.firstName;
-      //  this.id =data.id;
-      this.data1=JSON.parse(data.data);
       (data.showTab == "firstName")?this.isCustomerDetails = true:this.isCustomerOrder = true;
-      this.currentCustomerOrderDetails = this.data1;
+      if(data.showTab == "editCustomer") this.editCustomer();
     })
-    
-    this.customers=customerdata; 
-    console.log(this.customers); 
+    // this.customers=customerdata; 
+    // console.log(this.customers); 
    // this.data1 = data[(parseInt(this._activatedRouter.queryParams['_value'].id,10) - 1)];   
+   this.customerService.getById(this._activatedRouter.snapshot.paramMap.get('id')).subscribe(temp => {
+    this.data1 = temp;
+    this.currentCustomerOrderDetails = this.data1;
+    this.currentEditCustomer = this.data1;
+    console.log("h", this.currentCustomerOrderDetails)
+   });
 }
 
 // CustomerOrder(){
@@ -51,9 +52,9 @@ currentEditCustomer=[];
 //   });
 // }
 
-EditCustomer(){
-  this.router.navigate(['edit-customer']);
-}
+// EditCustomer(){
+//   this.router.navigate(['edit-customer']);
+// }
 customerDetails(){
 
   this.isCustomerOrder = false; 

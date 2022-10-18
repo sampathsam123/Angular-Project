@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable} from 'rxjs';
-import {map} from  'rxjs';
 import { HttpClient } from '@angular/common/http';
-import data from 'src/customers.json';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomerService } from '../customer.service';
+import { Customer } from '../customer';
+import { throwIfEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-customer-order',
@@ -11,56 +11,45 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./customer-order.component.css']
 })
 export class CustomerOrderComponent implements OnInit {
-data1:any ;
-customers: any;
-item;
-selectedTotalCost: number = 0;
-@Input() orderDetails: any;
+  data1: any;
+  customerdata: any;
+  item;
+  selectedTotalCost: number = 0;
+  @Input() orderDetails: any;
 
-  constructor( private router:Router, private htp:HttpClient, private _activatedRouter:ActivatedRoute) { }
+  constructor(private router: Router,
+    private _activatedRouter: ActivatedRoute,
+    private customerService: CustomerService) { }
 
   ngOnInit() {
-  console.log("Order Details", this.orderDetails);
-  this.customers= this.orderDetails;
   
-  this.customers.orders.map((e) => {
-    this.selectedTotalCost += e.itemCost;
-  });
-  // this.customers = data[(parseInt(this._activatedRouter.queryParams['_value'].id)-1)];
-   
- 
-// console.log(this.customers);
-
-//  this.customers.map((customer) => {
-//      customer['totalCost'] = 0;
-//     if (customer?.orders) {
-//     customer.orders.map((order) => {
-//      customer['totalCost'] += order.itemCost;
-//      console.log(this.totalCost)
-//       });
-//     }
-//  });
-
-
-
-  }
-  totalCost(totalCost: any) {
-    throw new Error('Method not implemented.');
+    this._activatedRouter.paramMap.subscribe((param) => {
+      var id = Number(param.get('id'));
+      this.getById(id);
+    })
   }
 
-  
+  getById(id: number) {
+    this.customerService.getById(id).subscribe((data1: Customer) => {
+      this.customerdata = data1;
+      this.customerdata.orders.map((e)=>{
+        this.selectedTotalCost +=e.itemCost;
+      })
+    })
+  }
 
-CustomerDetails(){
-  this.router.navigate(['customer-details'],{
-    queryParams: {
-      data:JSON.stringify(this.data1)
+
+  CustomerDetails() {
+    this.router.navigate(['customer-details'], {
+      queryParams: {
+        data: JSON.stringify(this.data1)
       }
-  });
+    });
 
-}
-EditCustomer(){
-  this.router.navigate(['edit-customer'])
-}
+  }
+  EditCustomer() {
+    this.router.navigate(['edit-customer'])
+  }
 
 
 }
@@ -76,6 +65,6 @@ EditCustomer(){
    //this.htp.get('https://example.com/api/items').pipe(map((customerData:any) => {})).subscribe(result => {
      // console.log(result);
     //});
-  
+
 
 

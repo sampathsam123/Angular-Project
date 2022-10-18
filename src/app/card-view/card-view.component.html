@@ -12,7 +12,7 @@
             <div class="card-view tc">
                 <div class="cv-header">
                     <span>{{ d.firstName + ' ' + d.lastName }}
-                        <i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['/editcomponent', d.id]"></i>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="editCustomer(d)"></i>
                     </span>
                 </div>
                 <div>
@@ -40,5 +40,9 @@
 <div class="pagination">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
-
 <br>
+
+<div *ngIf="isEditCustomer">
+    <app-edit-customer [Editcustomer]="currentEditCustomer"></app-edit-customer>
+</div>
+

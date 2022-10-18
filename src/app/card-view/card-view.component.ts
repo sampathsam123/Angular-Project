@@ -1,6 +1,5 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -16,23 +15,28 @@ export class CardViewComponent implements OnInit {
   page = '';
  // customers: customerInterface[] = customerData;
   customersdata ;
-
+  isEditCustomer=false;
+  currentEditCustomer=[];
+  data1;
   constructor(private _router: Router, private _activatedRouter: ActivatedRoute ,private customerService:CustomerService) { }
 
   ngOnInit(): void { 
     this.get();
   }
   ViewOrder(data: any , showTab : string) {
-    this._router.navigate(['customer-details'], {
+    this._router.navigate(['customer-details', data.id], {
       queryParams: {
-        // ...data , 
-        data:JSON.stringify(data),
         showTab:showTab
       }
     });
   }
-  EditCustomer() {
-    this._router.navigate(['/editcomponent'])
+
+  editCustomer(data: any){
+    this.isEditCustomer=true;
+    this._router.navigate(['customer-details', data.id], {
+      queryParams: {
+      showTab:'editCustomer'
+    }})
   }
 
   get(){

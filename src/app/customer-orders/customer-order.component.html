@@ -1,17 +1,17 @@
 <div>
     <div class="container">
         <span class="order">
-            Order for {{customers.firstName}} {{customers.lastName}}
+            Order for {{customerdata.firstName}} {{customerdata.lastName}}
         </span>
         <table class="table table-striped">
             <tbody>
-                <tr *ngFor="let arrayorder of customers.orders;">
-                    <td>{{arrayorder.productName }}</td>
-                    <td>${{arrayorder.itemCost}}</td>
+                <tr *ngFor="let arrayorder of customerdata.orders">
+                    <td>{{arrayorder?.productName }}</td>
+                    <td>${{arrayorder?.itemCost}}</td>
                 </tr>
                 <tr>
                     <td>TotalCost</td>
-                    <td class="total">${{selectedTotalCost | number }}</td>
+                    <td class="total">${{selectedTotalCost|number}}</td>
                 </tr>
             </tbody>
         </table>

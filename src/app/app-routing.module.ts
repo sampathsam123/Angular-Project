@@ -17,7 +17,6 @@ import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { HeaderComponent } from './header/header.component';
-import { EditcopmComponent } from './editcopm/editcopm.component';
 
 
 const routes: Routes = [
@@ -31,15 +30,14 @@ const routes: Routes = [
   { path: "map-view", component: MapViewComponent, canActivate: [AuthGuard] },
   { path: "customer-order", component: CustomerOrderComponent, canActivate: [AuthGuard] },
   { path: "customer-details", component: CustomerDetailsComponent, canActivate: [AuthGuard] },
+  { path: "customer-details/:id", component: CustomerDetailsComponent, canActivate: [AuthGuard] },
   // {path:" ",redirectTo:'/student',pathMatch:'full'},
   { path: 'new-customer', component: NewCustomerComponent, canActivate: [AuthGuard] },
-  { path: 'editcomponent', component: EditcopmComponent, canActivate: [AuthGuard] },
   { path: '', component: LoginComponent },
   { path: 'card-view/editcomponent/:id', component: EditCustomerComponent, canActivate: [AuthGuard] },
   { path: 'customer-details/:id', component: CustomerDetailsComponent, canActivate: [AuthGuard] },
   { path: 'customer-order/:id', component: CustomerOrderComponent, canActivate: [AuthGuard] },
   { path: 'edit-customer/:id', component: EditCustomerComponent, canActivate: [AuthGuard] },
-  { path: 'editcomponent/:ed', component: EditcopmComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'cutomer/new-customer', pathMatch: 'full' },
   // {path:'',redirectTo:'card-view/edit-customer/:id', pathMatch:'full'}
 ];

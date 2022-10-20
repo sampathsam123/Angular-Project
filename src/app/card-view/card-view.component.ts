@@ -10,14 +10,11 @@ import { CustomerService } from '../customer.service';
 })
 
 export class CardViewComponent implements OnInit {
-  @Input() url=[];
   search1 = '';
   page = '';
- // customers: customerInterface[] = customerData;
   customersdata ;
   isEditCustomer=false;
   currentEditCustomer=[];
-  data1;
   constructor(private _router: Router, private _activatedRouter: ActivatedRoute ,private customerService:CustomerService) { }
 
   ngOnInit(): void { 

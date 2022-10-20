@@ -22,7 +22,6 @@ customersdata: any;
   get(){
     this.customerService.get().subscribe((data)=>{
       this.customersdata=data;
-      console.log(this.customersdata)
     })
   }
 }

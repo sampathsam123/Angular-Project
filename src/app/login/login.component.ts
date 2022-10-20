@@ -11,7 +11,6 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   userName: string = '';
   password: string = '';
-  errormsg;
   loginForm : FormGroup;
   
   isSubmitted: boolean = false;
@@ -31,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+    // debugger;
       this.authService
       .login(this.form.value.email,this.form.value.password)
       .subscribe(data=>{

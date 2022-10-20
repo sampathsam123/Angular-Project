@@ -22,7 +22,6 @@ export class CustomerOrderComponent implements OnInit {
     private customerService: CustomerService) { }
 
   ngOnInit() {
-  
     this._activatedRouter.paramMap.subscribe((param) => {
       var id = Number(param.get('id'));
       this.getById(id);
@@ -38,33 +37,22 @@ export class CustomerOrderComponent implements OnInit {
     })
   }
 
+  // CustomerDetails() {
+  //   this.router.navigate(['customer-details'], {
+  //     queryParams: {
+  //       data: JSON.stringify(this.data1)
+  //     }
+  //   });
 
-  CustomerDetails() {
-    this.router.navigate(['customer-details'], {
-      queryParams: {
-        data: JSON.stringify(this.data1)
-      }
-    });
-
-  }
-  EditCustomer() {
-    this.router.navigate(['edit-customer'])
-  }
+  // }
+  // EditCustomer() {
+  //   this.router.navigate(['edit-customer'])
+  // }
 
 
 }
 
 
-  //  this._studentService.getStudents().subscribe(res=>{
-
-    // this.customers.push({nam:'smapth'});
-    // console.log(this.customers);
-  //  });
-   //return this.htp.get('https://jsonplaceholder.typicode.com/users')
-   //.pipe(map((res:any)=>{return res;}))
-   //this.htp.get('https://example.com/api/items').pipe(map((customerData:any) => {})).subscribe(result => {
-     // console.log(result);
-    //});
 
 
 

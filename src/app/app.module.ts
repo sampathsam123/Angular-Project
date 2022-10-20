@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { StudentService } from './student.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { myRoutings } from './app-routing.module';
-import { CustomerManagerComponent } from './customer-manager/customer-manager.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardViewComponent } from './card-view/card-view.component';
@@ -33,7 +32,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     AppComponent,
     myRoutings, 
-    CustomerManagerComponent, 
     LoginComponent,
      NavbarComponent,
     CardViewComponent,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _router:Router , private _activatedRouter : ActivatedRoute) { }
+  constructor(private _router:Router , private _activatedRouter : ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,9 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/list-view'], { relativeTo: this._activatedRouter });
   }
   Logout() {
-    this._router.navigate(['/login'], { relativeTo: this._activatedRouter })
+    // debugger;
+    this.authService.logout();
+    this._router.navigate(['/'], { relativeTo: this._activatedRouter })
 
   }
   About() {

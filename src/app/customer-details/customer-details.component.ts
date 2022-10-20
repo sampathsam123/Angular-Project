@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
 
 
-@Component({               //animations
+@Component({            
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
   styleUrls: ['./customer-details.component.css']
@@ -38,23 +38,10 @@ currentEditCustomer=[];
     this.data1 = temp;
     this.currentCustomerOrderDetails = this.data1;
     this.currentEditCustomer = this.data1;
-    console.log("h", this.currentCustomerOrderDetails)
    });
 }
 
-// CustomerOrder(){
-//  alert();
-//   this.router.navigate(['customer-orders'],
-//   {
-//     queryParams:{
-//       data:JSON.stringify(this.data1)
-//     },skipLocationChange:true
-//   });
-// }
 
-// EditCustomer(){
-//   this.router.navigate(['edit-customer']);
-// }
 customerDetails(){
 
   this.isCustomerOrder = false; 

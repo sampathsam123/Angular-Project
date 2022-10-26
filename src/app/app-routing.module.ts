@@ -19,7 +19,7 @@ import { HeaderComponent } from './header/header.component';
 const routes: Routes = [
 
    { path: "about", component: AboutComponent, canActivate: [AuthGuard] },
-  { path: "order", component: OrdersComponent, canActivate: [AuthGuard] },
+  { path: "orders", component: OrdersComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent, canActivate: [AuthGuard], data: { moduleName: 'login' }},
   { path: "list-view", component: ListViewComponent },
   { path: "card-view", component: CardViewComponent, canActivate: [AuthGuard] },

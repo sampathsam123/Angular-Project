@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/list-view'], { relativeTo: this._activatedRouter });
   }
   Logout() {
-    // debugger;
     this.authService.logout();
     this._router.navigate(['/'], { relativeTo: this._activatedRouter })
 
@@ -29,6 +28,6 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/about'], { relativeTo: this._activatedRouter })
   }
   Order() {
-    this._router.navigate(['/order'], { relativeTo: this._activatedRouter })
+    this._router.navigate(['/orders'], { relativeTo: this._activatedRouter })
   }
 }

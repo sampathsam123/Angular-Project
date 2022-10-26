@@ -9,36 +9,26 @@ import { CustomerService } from '../customer.service';
 })
 export class NewCustomerComponent implements OnInit {
 
-  @Input() CustomerForm : Customer ={
-    id: undefined,
-    firstName: undefined,
-    lastName: '',
-    gender: '',
-    address: undefined,
-    string: undefined,
-    city: '',
-    state: {
-      abbreviation: '',
-      name: ''
-    },
-    abbreviation: '',
-    name: '',
-    orders: [{
+   CustomerForm:Customer={
+     firstName: '',
+     lastName: '',
+     gender: '',
+     address: '',
+     city: '',
+     state: {
+       abbreviation: '',
+       name: '',
+     },
+     id: undefined,
+     abbreviation: '',
+     name: '',
+     orders: [{
       productName: '',
-      itemCost: 0,
-    }],
-    latitude: 0,
-    longitude: 0,
-    filter: function (arg0: (_: any) => boolean): Customer {
-      throw new Error('Function not implemented.');
-    },
-    hide: function () {
-      throw new Error('Function not implemented.');
-    },
-    show: function () {
-      throw new Error('Function not implemented.');
-    }
-  }
+      itemCost: '',
+  }],
+     latitude: '',
+     longitude: ''
+   };
 
   constructor(private _router: Router, private _activatedRouter: ActivatedRoute, private customerService: CustomerService) { }
 

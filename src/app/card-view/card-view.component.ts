@@ -10,11 +10,11 @@ import { CustomerService } from '../customer.service';
 })
 
 export class CardViewComponent implements OnInit {
-  search1 = '';
-  page = '';
-  customersdata ;
-  isEditCustomer=false;
-  currentEditCustomer=[];
+ public search1 = '';
+ public page = '';
+ public customersdata ;
+ public isEditCustomer=false;
+ public currentEditCustomer=[];
   constructor(private _router: Router, private _activatedRouter: ActivatedRoute ,private customerService:CustomerService) { }
 
   ngOnInit(): void { 
@@ -27,7 +27,6 @@ export class CardViewComponent implements OnInit {
       }
     });
   }
-
   editCustomer(data: any){
     this.isEditCustomer=true;
     this._router.navigate(['customer-details', data.id], {

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule, } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentService } from './student.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { myRoutings } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -24,7 +23,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CustomerService } from './customer.service';
-import { SharedModule } from './shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 // import { CustomerModule } from './customer/customer.module';
 

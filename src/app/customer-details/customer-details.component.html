@@ -5,7 +5,7 @@
         <button>Customer Information</button>
     </div>
     <div class="row">
-        <span class="col-sm-2 p-3 bg-white btn"  (click)="customerDetails()"> <i class="fa fa-list"
+        <span class="col-sm-2 p-3 bg-white btn" (click)="customerDetails()"> <i class="fa fa-list"
                 aria-hidden="true"></i>
             Customer Details
         </span>
@@ -29,13 +29,10 @@
             <span>{{data1?.address}}</span><br>
             <span>{{data1?.city + " , "+ data1?.state.name}}</span><br>
             <span></span>
-            <!-- <div>{{firstName}}</div>
-            <div>{{id}}</div> -->
         </div>
     </div>
     <br>
     <div>
-        <!-- <google-map class="w-100 p-3" class="h-100 d-inline-block"> </google-map> -->
         <div class="col-8">
             <google-map width="auto"> </google-map>
         </div>

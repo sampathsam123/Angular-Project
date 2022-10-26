@@ -11,7 +11,7 @@ import { CustomerService } from '../customer.service';
 })
 export class OrdersComponent implements OnInit {
 
-customersdata: any;
+public customersdata: any;
   constructor(private _router:Router , private _activatedRouter : ActivatedRoute, private customerService : CustomerService) { }
 
   ngOnInit(): void {

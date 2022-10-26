@@ -9,12 +9,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userName: string = '';
-  password: string = '';
-  loginForm : FormGroup;
-  
-  isSubmitted: boolean = false;
-  isValidUser: boolean = false;
+public  userName: string = '';
+public  password: string = '';
+public  loginForm : FormGroup;
+public  isSubmitted: boolean = false;
+public  isValidUser: boolean = false;
   form: FormGroup = new FormGroup({});
 
   constructor(private _router: Router, 
@@ -30,12 +29,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    // debugger;
       this.authService
       .login(this.form.value.email,this.form.value.password)
       .subscribe(data=>{
         if(data){
-          this._router.navigate(['/card-view']); // If valid and route to card-vew
+          this._router.navigate(['/card-view']); 
         }
         else{
           this.isSubmitted=true;

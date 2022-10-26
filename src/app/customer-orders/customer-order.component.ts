@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer';
-import { throwIfEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-customer-order',
@@ -11,10 +10,9 @@ import { throwIfEmpty } from 'rxjs';
   styleUrls: ['./customer-order.component.css']
 })
 export class CustomerOrderComponent implements OnInit {
-  data1: any;
-  customerdata: any;
-  item;
-  selectedTotalCost: number = 0;
+  public data1: any;
+  public  customerdata: any;
+  public selectedTotalCost: number = 0;
   @Input() orderDetails: any;
 
   constructor(private router: Router,

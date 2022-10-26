@@ -1,12 +1,9 @@
 export interface Customer {
-  hide();
-  show();
-  filter(arg0: (_: any) => boolean): Customer;
     id: Number;
-    firstName: Number;
+    firstName: string;
     lastName: string;
     gender: string;
-    address: number, string: any;
+    address: string;
     city: string;
     state: {
         abbreviation: string,
@@ -16,10 +13,10 @@ export interface Customer {
     name: string;
     orders: [{
         productName: string,
-        itemCost: number
+        itemCost: string
     }]
-    latitude: number;
-    longitude: number;
+    latitude: string;
+    longitude: string;
 };
 
 

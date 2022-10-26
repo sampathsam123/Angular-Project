@@ -7,22 +7,22 @@ import { CustomerService } from '../customer.service';
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.css'],
-  
+
 })
 export class ListViewComponent implements OnInit {
   public customer: any[];
-  total = ''
-  search2 = ''
-  customersdata ;
-  constructor(private _router: Router, _activated: ActivatedRoute, private customerService:CustomerService) { }
+  public total = ''
+  public search2 = ''
+  public customersdata;
+  constructor(private _router: Router, _activated: ActivatedRoute, private customerService: CustomerService) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.get();
   }
   totalCost(totalCost: any) {
     throw new Error('Method not implemented.');
   }
-  get(){
+  get() {
     this.customerService.get().subscribe((data) => {
       this.customersdata = data;
       this.customersdata.map((customer) => {
@@ -41,19 +41,13 @@ export class ListViewComponent implements OnInit {
     console.log(data);
     this._router.navigate(['customer-details', data.id], {
       queryParams: {
-      showTab: showTab
+        showTab: showTab
       }
     })
     console.log(data);
   }
 
-  // ViewOrder(data:any){
-  //   this._router.navigate(['customer-order'],{
-  //     queryParams:{
-  //       id: data.id
-  //     }
-  //   })
-  // }
+
 
 
 }
